@@ -1,6 +1,6 @@
 
 %define name	filters
-%define version	2.39
+%define version	2.40
 %define rel	1
 %define release %mkrel %rel
 
@@ -12,7 +12,7 @@ License: GPL
 Group: Toys
 URL: http://kitenet.net/~joey/code/filters.html
 # author distributes tarball only from debian pool
-Source: http://ftp.debian.org/debian/pool/main/f/filters/%{name}_%{version}.tar.bz2
+Source: http://ftp.debian.org/debian/pool/main/f/filters/%{name}_%{version}.tar.gz
 BuildRequires: flex, byacc
 BuildRoot: %{_tmppath}/%{name}-root
 
