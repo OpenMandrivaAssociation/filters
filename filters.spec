@@ -14,7 +14,6 @@ URL: http://kitenet.net/~joey/code/filters.html
 # author distributes tarball only from debian pool
 Source: http://ftp.debian.org/debian/pool/main/f/filters/%{name}_%{version}.tar.gz
 BuildRequires: flex, byacc
-BuildRoot: %{_tmppath}/%{name}-root
 
 %description
 A collection of filters to do all sorts of strange things to text.
