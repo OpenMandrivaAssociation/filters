@@ -1,6 +1,6 @@
 
 %define name	filters
-%define version	2.40
+%define version	2.44
 %define rel	1
 %define release %mkrel %rel
 
