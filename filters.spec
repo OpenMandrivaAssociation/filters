@@ -1,6 +1,6 @@
 
 %define name	filters
-%define version	2.44
+%define version	2.46
 %define rel	1
 %define release %mkrel %rel
 
@@ -13,6 +13,7 @@ Group: Toys
 URL: http://kitenet.net/~joey/code/filters.html
 # author distributes tarball only from debian pool
 Source: http://ftp.debian.org/debian/pool/main/f/filters/%{name}_%{version}.tar.gz
+Patch0: filters-printf-format.patch
 BuildRequires: flex, byacc
 BuildRoot: %{_tmppath}/%{name}-root
 
@@ -23,8 +24,9 @@ wide range of others.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
-sed -r -i '/\s+g*cc/s,g*cc,\$(CC),' Makefile *.dir/makefile
+sed -r -i '/\s+g*cc/s,g*cc,\$(CC),' *.dir/makefile
 
 %build
 export CC="%__cc %optflags"
@@ -32,7 +34,7 @@ export CC="%__cc %optflags"
 
 %install
 rm -rf %{buildroot}
-make install PREFIX="%{buildroot}"
+%makeinstall_std
 
 %clean
 rm -rf %{buildroot}
