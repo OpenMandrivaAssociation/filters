@@ -1,0 +1,25 @@
+Index: filters/ken.l
+===================================================================
+--- filters/ken.l
++++ filters/ken.l	2009-07-09 21:38:10.000000000 +0300
+@@ -283,6 +283,6 @@
+ 		    case 5: ECHO; break;
+ 		    }
+ 		}
+-.		printf(yytext);
++.		printf("%s", yytext);
+ \n		printf("\n");
+ %%
+Index: filters/newspeak.l
+===================================================================
+--- filters/newspeak.l
++++ filters/newspeak.l	2009-07-09 21:38:44.000000000 +0300
+@@ -586,7 +586,7 @@
+ [.,!?]\"([^\n\".!]+[.!])?\n/[\n\t ]	printf("%c  Hail Big Brother!\"%s",Y0,yytext+2);
+ \"([.,!?][^\n\".!]+[.!])?\n/[\n\t ]	printf("%c  Hail Big Brother!\"%s",Y1,yytext+2);
+ 
+-.			printf(yytext);
++.			printf("%s", yytext);
+ \n			printf("\n");
+ 
+ %{
