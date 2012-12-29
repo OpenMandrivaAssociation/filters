@@ -1,21 +1,16 @@
-
 %define name	filters
-%define version	2.46
-%define rel	2
-%define release %mkrel %rel
+%define debug_package %{nil}
 
 Name: %name
-Version: %version
-Release: %release
+Version: 2.48
+Release: 1
 Summary: A collection of text filters, including the Swedish Chef
 License: GPL
 Group: Toys
 URL: http://kitenet.net/~joey/code/filters.html
 # author distributes tarball only from debian pool
-Source: http://ftp.debian.org/debian/pool/main/f/filters/%{name}_%{version}.tar.gz
-Patch0: filters-printf-format.patch
+Source: http://ftp.debian.org/debian/pool/main/f/filters/filters_2.48.tar.gz
 BuildRequires: flex, byacc
-BuildRoot: %{_tmppath}/%{name}-root
 
 %description
 A collection of filters to do all sorts of strange things to text.
@@ -24,7 +19,6 @@ wide range of others.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
 
 sed -r -i '/\s+g*cc/s,g*cc,\$(CC),' *.dir/makefile
 
@@ -33,11 +27,7 @@ export CC="%__cc %optflags"
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
-
-%clean
-rm -rf %{buildroot}
 
 %files
 %defattr(0644,root,root,0755)
@@ -85,3 +75,4 @@ rm -rf %{buildroot}
 * Thu Aug 21 2003 Claudio Matsuoka <claudio@conectiva.com>
 + 2003-08-21 19:05:26 (34521)
 - Initial commit.
+
