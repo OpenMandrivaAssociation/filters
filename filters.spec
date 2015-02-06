@@ -2,7 +2,7 @@
 
 Name: filters
 Version: 2.48
-Release: 2
+Release: 3
 Summary: A collection of text filters, including the Swedish Chef
 License: GPL
 Group: Toys
