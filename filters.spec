@@ -9,6 +9,7 @@ Group: Toys
 URL: https://kitenet.net/~joey/code/filters.html
 # author distributes tarball only from debian pool
 Source: http://ftp.debian.org/debian/pool/main/f/filters/filters_2.48.tar.gz
+BuildRequires:	make
 BuildRequires: flex, byacc
 
 %description
